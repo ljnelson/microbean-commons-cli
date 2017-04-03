@@ -126,6 +126,19 @@ public class CommonsCliExtension implements Extension {
 
 
     /*
+     * Constructors.
+     */
+
+
+    /**
+     * Creates a new {@link Producers} instance.
+     */
+    private Producers() {
+      super();
+    }
+    
+
+    /*
      * Static methods.
      */
 

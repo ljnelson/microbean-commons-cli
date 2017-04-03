@@ -68,6 +68,7 @@ public class TestCommonsCliExtension {
    * Instance methods.
    */
 
+  
   @Produces
   @ApplicationScoped
   private final Options produceOptions() {
