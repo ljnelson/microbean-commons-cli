@@ -75,7 +75,7 @@
       <dependency>
         <groupId>org.microbean</groupId>
         <artifactId>microbean-main</artifactId>
-        <version>4</version>
+        <version>5</version>
         <type>jar</type>
       </dependency>
 

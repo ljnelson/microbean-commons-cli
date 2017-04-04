@@ -157,8 +157,9 @@ public class CommonsCliExtension implements Extension {
      * unsatisfied} in which case a new, "empty" {@link Options}
      * instance will be parsed instead
      *
-     * @param commandLineArguments the actual command line arguments;
-     * may be {@code null}
+     * @param commandLineArguments an {@link Instance} representing
+     * the actual command line arguments; may be {@code null} or
+     * {@linkplain Instance#isUnsatisfied()}
      *
      * @return a {@link CommandLine} instance; never {@code null}
      *
@@ -171,8 +172,11 @@ public class CommonsCliExtension implements Extension {
      */
     @Produces
     @ApplicationScoped
-    private static final CommandLine produceCommandLine(final CommandLineParser parser, final Instance<Options> optionsInstance, @Named("commandLineArguments") final String[] commandLineArguments) throws ParseException {
-      Objects.requireNonNull(parser);
+    private static final CommandLine produceCommandLine(final CommandLineParser parser,
+                                                        final Instance<Options> optionsInstance,
+                                                        @Named("commandLineArguments") final Instance<String[]> commandLineArgumentsInstance)
+      throws ParseException {      
+      Objects.requireNonNull(parser);      
       final Options options;
       if (optionsInstance != null && !optionsInstance.isUnsatisfied()) {
         options = optionsInstance.get();
@@ -180,7 +184,13 @@ public class CommonsCliExtension implements Extension {
         options = new Options();
       }
       assert options != null;
-      final CommandLine returnValue = parser.parse(options, commandLineArguments);
+      final String[] commandLineArguments;
+      if (commandLineArgumentsInstance != null && !commandLineArgumentsInstance.isUnsatisfied()) {
+        commandLineArguments = commandLineArgumentsInstance.get();
+      } else {
+        commandLineArguments = null;
+      }
+      final CommandLine returnValue = parser.parse(options, commandLineArguments, true);
       return returnValue;
     }
     
