@@ -17,10 +17,10 @@
 
 /**
  * Provides classes and interfaces for exposing the <a
- * href="https://commons.apache.org/proper/commons-cli/">Apache
- * Commons CLI project</a> as CDI beans.
+ * href="https://commons.apache.org/proper/commons-cli/"
+ * target="_parent">Apache Commons CLI project</a> as CDI beans.
  *
- * @author <a href="http://about.me/lairdnelson"
+ * @author <a href="https://about.me/lairdnelson"
  * target="_parent">Laird Nelson</a>
  *
  * @see org.microbean.apache.commons.cli.CommonsCliExtension

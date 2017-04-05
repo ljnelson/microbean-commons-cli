@@ -45,10 +45,10 @@ import org.apache.commons.cli.ParseException;
  * A <a
  * href="http://docs.jboss.org/cdi/spec/2.0-PRD/cdi-spec.html#spi"
  * target="_parent">CDI 2.0 portable extension</a> that exposes the <a
- * href="https://commons.apache.org/proper/commons-cli/">Apache
- * Commons CLI project</a> as CDI beans.
+ * href="https://commons.apache.org/proper/commons-cli/"
+ * target="_parent">Apache Commons CLI project</a> as CDI beans.
  *
- * @author <a href="http://about.me/lairdnelson"
+ * @author <a href="https://about.me/lairdnelson"
  * target="_parent">Laird Nelson</a>
  *
  * @see CommandLine
@@ -114,12 +114,12 @@ public class CommonsCliExtension implements Extension {
 
   /**
    * A class housing several <a
-   * href="http://docs.jboss.org/cdi/spec/2.0-PRD/cdi-spec.html#producer_method">producer
-   * methods</a> that produce certain <a
-   * href="https://commons.apache.org/proper/commons-cli/">Apache
-   * Commons CLI components</a>.
+   * href="http://docs.jboss.org/cdi/spec/2.0-PRD/cdi-spec.html#producer_method"
+   * target="_parent">producer methods</a> that produce certain <a
+   * href="https://commons.apache.org/proper/commons-cli/"
+   * target="_parent">Apache Commons CLI components</a>.
    *
-   * @author <a href="http://about.me/lairdnelson"
+   * @author <a href="https://about.me/lairdnelson"
    * target="_parent">Laird Nelson</a>
    */
   private static final class Producers {
@@ -157,7 +157,7 @@ public class CommonsCliExtension implements Extension {
      * unsatisfied} in which case a new, "empty" {@link Options}
      * instance will be parsed instead
      *
-     * @param commandLineArguments an {@link Instance} representing
+     * @param commandLineArgumentsInstance an {@link Instance} representing
      * the actual command line arguments; may be {@code null} or
      * {@linkplain Instance#isUnsatisfied()}
      *
